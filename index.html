@@ -4,12 +4,69 @@
 <meta charset="utf-8">
 <title>无标题文档</title>
 <style>
+body{ background:linear-gradient(#ccc,#fff); overflow-y:hidden;}
+#turn{ width:280px; height:70px; background:-webkit-linear-gradient(red,#ff004f); position:absolute; top:50%; left:50%; margin-left:-140px; margin-top:-50px; border-radius:10px; text-align:center;  font:bold 20px '微软雅黑'; line-height:70px; text-decoration:none; color:#fff; box-shadow:0 10px 5px #333; text-shadow:2px 2px 2px #000; transition:0.3s all ease;}
+#turn:hover{ box-shadow:0px 10px 5px #333,inset 0 0 10px #fff; font-size:30px;}
+#turn:active{ margin-top:-40px; box-shadow:0px 2px 5px #000;}
+
+@keyframes test{
+	from:{left:-113px;}
+	to{left:-226px;}	
+}
+@keyframes test2{
+	from:{left:113px;}
+	to{left:0;}	
+}
+
+.b_box{position:relative; height:677px; }
+.box{ position:absolute; left:480px; top:290px; width:40px; height:70px; border:5px solid #bbb; overflow:hidden; border-radius:10px;}
+.box2{left:820px; }
+.box div{ position:absolute; left:-113px; top:0; width:400px; height:400px; background:-webkit-repeating-linear-gradient(-45deg,red 0px,red 10px,#fff 10px,#fff 20px,blue 20px,blue 30px,#fff 30px,#fff 40px);
+	-webkit-animation-name:test;
+	-webkit-animation-duration:1s;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-iteration-count:infinite;
+}
+.box1 div{
+	-webkit-animation-name:test2;
+}
 </style>
 <script>
+window.onload=function(){
+	document.body.style.height = document.documentElement.clientHeight + 'px';
+	var d = 0;
+	var bOk = true;
+	setInterval(function(){
+		if(bOk){
+			d++;
+		}else{
+			d--;
+		}
+		document.body.style.background = 'linear-gradient('+d+'deg,#ccc,#fff)';	
+	},30);	
+	
+	var oTurn = document.getElementById('turn');
+	var aDiv = document.querySelectorAll('.box');
+	oTurn.onmouseup=function(){
+		bOk = !bOk;	
+		for(var i = 0;i<aDiv.length;i++){
+			aDiv[i].classList.toggle('box1');
+		}
+	};
+	
+};	
 </script>
 </head>
 
 <body>
-<h1>HELLO!!~</h1>
+<div class="b_box">
+    <a href="javascript:;" id="turn">反转</a>
+    <div class="box">
+        <div></div>
+    </div>
+    <div class="box box2">
+        <div></div>
+    </div>
+</div>
 </body>
 </html>
