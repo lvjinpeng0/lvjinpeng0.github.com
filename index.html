@@ -75,7 +75,7 @@ window.onload=function(){
 	for(var i = 0;i<aColBtn.length;i++){
 		(function(index){
 			aColBtn[i].onchange = function(){
-				arr[index] = aSpan[index].innerHTML = aSpan[index].style.color = aColBtn[index].value;	
+				arr[index] = aSpan[index].innerHTML = aSpan[index].style.color = aColBtn[index].value.toUpperCase();	
 				lDiv.style.background = '-webkit-repeating-linear-gradient(-45deg,'+arr[0]+' 0px,'+arr[0]+' 10px,'+arr[1]+' 10px,'+arr[1]+' 20px,'+arr[0]+' 20px,'+arr[0]+' 30px,'+arr[1]+' 30px,'+arr[1]+' 40px)'; 
 			};	
 		})(i);
