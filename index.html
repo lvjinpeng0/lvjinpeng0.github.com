@@ -18,9 +18,10 @@ body{ background:linear-gradient(#ccc,#fff); overflow-y:hidden;}
 	to{left:0;}	
 }
 
-.b_box{position:relative; height:677px; }
-.box{ position:absolute; left:480px; top:290px; width:40px; height:70px; border:5px solid #bbb; overflow:hidden; border-radius:10px;}
-.box2{left:820px; }
+.l_box{position:relative; height:677px; }
+.b_box{ position:absolute; left:50%; top:50%; margin-left:-195px; margin-top:-50px;}
+.box{ position:absolute; left:0; top:0; width:40px; height:70px; border:5px solid #bbb; overflow:hidden; border-radius:10px;}
+.box2{left:340px; }
 .box div{ position:absolute; left:-113px; top:0; width:400px; height:400px; background:-webkit-repeating-linear-gradient(-45deg,red 0px,red 10px,#fff 10px,#fff 20px,blue 20px,blue 30px,#fff 30px,#fff 40px);
 	-webkit-animation-name:test;
 	-webkit-animation-duration:1s;
@@ -59,13 +60,15 @@ window.onload=function(){
 </head>
 
 <body>
-<div class="b_box">
+<div class="l_box">
     <a href="javascript:;" id="turn">反转</a>
-    <div class="box">
-        <div></div>
-    </div>
-    <div class="box box2">
-        <div></div>
+    <div class="b_box">
+        <div class="box">
+            <div></div>
+        </div>
+        <div class="box box2">
+            <div></div>
+        </div>
     </div>
 </div>
 </body>
