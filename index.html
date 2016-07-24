@@ -30,7 +30,7 @@ body{ background:linear-gradient(#999,#fff); overflow-y:hidden;}
 	-webkit-animation-name:test2;
 }
 .btn_txt{ font:bold 16px '微软雅黑'; margin-left:10px; margin-right:100px; color:#FFFFFF; text-shadow:1px 1px 0px #333;}
-#btn_txt2{ color:#000000;}
+.btn_txt2{ color:#000000;}
 .a_box{position:absolute; left:50%; top:50%; margin-left:-195px; margin-top:-120px;}
 .long_box{position:absolute; left:0; top:30px; width:385px; height:30px; border:2px solid #ccc; overflow:hidden; border-radius:20px;}
 .long_box div{ position:absolute; left:-113px; top:0; width:800px; height:400px; background:-webkit-repeating-linear-gradient(-45deg,#FFFFFF 0px,#FFFFFF 10px,#000000 10px,#000000 20px,#FFFFFF 20px,#FFFFFF 30px,#000000 30px,#000000 40px);
@@ -45,6 +45,8 @@ body{ background:linear-gradient(#999,#fff); overflow-y:hidden;}
 </style>
 <script>
 window.onload=function(){
+	
+	//背景转动
 	document.body.style.height = document.documentElement.clientHeight + 'px';
 	var d = 0;
 	var bOk = true;
@@ -57,6 +59,7 @@ window.onload=function(){
 		document.body.style.background = 'linear-gradient('+d+'deg,#999,#fff)';	
 	},30);	
 	
+	//切换class反转
 	var oTurn = document.getElementById('turn');
 	var aDiv = document.querySelectorAll('.box');
 	var oDiv = document.querySelector('.long_box');
@@ -68,6 +71,7 @@ window.onload=function(){
 		oDiv.classList.toggle('long_box1');
 	};
 	
+	//切换颜色的滚筒
 	var aColBtn = document.querySelectorAll('.a_box input');
 	var aSpan = document.querySelectorAll('.a_box span');
 	var lDiv = document.querySelector('.long_box div');
@@ -90,7 +94,7 @@ window.onload=function(){
     	<input type="color" value="#FFFFFF">
         <span class="btn_txt">#FFFFFF</span>
     	<input type="color" value="#000000" >
-        <span class="btn_txt">#000000</span>
+        <span class="btn_txt btn_txt2">#000000</span>
         <div class="long_box">
         	<div></div>
         </div>
