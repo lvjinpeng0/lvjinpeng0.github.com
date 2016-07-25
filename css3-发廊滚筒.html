@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ padding:0; margin:0;}
+.box{ position:relative; width:113px; height:400px; border:1px solid #000; margin:100px auto; _overflow:hidden;}
+div div{ position:absolute; left:0; top:0; width:400px; height:400px; background:-webkit-repeating-linear-gradient(-45deg,red 0px,red 10px,#fff 10px,#fff 20px,blue 20px,blue 30px,#fff 30px,#fff 40px);}
+</style>
+<script>
+window.onload=function(){
+	var oDiv = document.querySelector('.box div');	
+	var d = 0;
+	setInterval(function(){
+		d-=2;
+		oDiv.style.left = d%113+'px';	
+	},30);
+};
+</script>
+</head>
+
+<body>
+<div class="box">
+	<div></div>
+</div>
+</body>
+</html>
