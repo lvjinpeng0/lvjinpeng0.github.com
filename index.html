@@ -2,12 +2,16 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>Reverse-World</title>
 <style>
 body{ background:linear-gradient(#999,#fff); overflow-y:hidden;}
-#turn{ width:280px; height:70px; background:-webkit-linear-gradient(red,#ff004f); position:absolute; top:50%; left:50%; margin-left:-140px; margin-top:-50px; border-radius:10px; text-align:center;  font:bold 20px '微软雅黑'; line-height:70px; text-decoration:none; color:#fff; box-shadow:0 10px 5px #333; text-shadow:2px 2px 2px #000; transition:0.3s all ease;}
-#turn:hover{ box-shadow:0px 10px 5px #333,inset 0 0 10px #fff; font-size:30px;}
-#turn:active{ margin-top:-40px; box-shadow:0px 2px 5px #000;}
+.turn{ width:280px; height:70px; background:linear-gradient(red,#ff004f); position:absolute; top:50%; left:50%; margin-left:-140px; margin-top:-50px; border-radius:10px; text-align:center;  font:bold 20px '微软雅黑'; line-height:70px; text-decoration:none; color:#fff; box-shadow:0 10px 5px #333; text-shadow:2px 2px 2px #000; transition:0.3s all ease;}
+.turn0{margin-top:40px;margin-left:-195px;width:90px; height:40px; font:bold 16px '微软雅黑'; line-height:40px;border-radius:7px; background:linear-gradient(#37ae92,#37ae92);  box-shadow:0 5px 3px #333; position:absolute; top:50%; left:50%;  color:#fff; text-align:center; text-decoration:none; text-shadow:1px 1px 1px #000; }
+.turn2{margin-left:-95px;}
+.turn3{margin-left:5px;}
+.turn4{margin-left:105px;}
+.turn:hover{ box-shadow:0px 10px 5px #333,inset 0 0 10px #fff; font-size:30px;}
+.turn:active{ margin-top:-40px; box-shadow:0px 2px 5px #000;}
 @keyframes test{
 	from:{left:-113px;}
 	to{left:-226px;}	
@@ -60,7 +64,7 @@ window.onload=function(){
 	},30);	
 	
 	//切换class反转
-	var oTurn = document.getElementById('turn');
+	var oTurn = document.getElementsByClassName('turn')[0];
 	var aDiv = document.querySelectorAll('.box');
 	var oDiv = document.querySelector('.long_box');
 	oTurn.onmouseup=function(){
@@ -99,7 +103,11 @@ window.onload=function(){
         	<div></div>
         </div>
     </div>
-    <a href="javascript:;" id="turn">反转</a>
+    <a href="javascript:;" class="turn">反转</a>
+    <a href="boom.html" target="_blank" class="turn0 turn1">爆炸</a>
+    <a href="turnover.html" target="_blank" class="turn0 turn2">百叶窗</a>
+    <a href="Screensaver.html" target="_blank" class="turn0 turn3">canvas屏保</a>
+    <a href="3D.html" target="_blank" class="turn0 turn4">3d-box</a>
     <div class="b_box">
         <div class="box">
             <div></div>
