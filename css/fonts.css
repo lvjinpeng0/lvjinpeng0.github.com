@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {font-family: "Helvetica Neue LT Com 75 Bold V1";
+  src: url("../fonts/82bca06364f8902980f19e5ebfa2c3ec.eot"); /* IE9*/
+  src: url("../fonts/82bca06364f8902980f19e5ebfa2c3ec.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/82bca06364f8902980f19e5ebfa2c3ec.woff2") format("woff2"), /* chrome、firefox */
+  url("../fonts/82bca06364f8902980f19e5ebfa2c3ec.woff") format("woff"), /* chrome、firefox */
+  url("../fonts/82bca06364f8902980f19e5ebfa2c3ec.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("../fonts/82bca06364f8902980f19e5ebfa2c3ec.svg#Helvetica Neue LT Com 75 Bold V1") format("svg"); /* iOS 4.1- */
+}
+

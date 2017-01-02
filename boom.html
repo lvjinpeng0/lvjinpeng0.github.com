@@ -6,8 +6,8 @@
 <style>
 *{margin:0; padding:0;}
 html,body{overflow:hidden;}
-.box{ width:700px; height:400px; margin:100px auto; background:url(img/2.jpg) no-repeat; position:relative;}
-.box span{ position:absolute; top:0; left:0; background:url(img/1.jpg) no-repeat;}
+.box{ width:700px; height:400px; margin:100px auto; background:url(img/2.png) no-repeat; position:relative;}
+.box span{ position:absolute; top:0; left:0; background:url(img/1.png) no-repeat;}
 </style>
 <script>
 function rnd(n,m){
@@ -47,11 +47,11 @@ window.onload = function(){
 			aS[aS.length-1].removeEventListener('transitionend',tranEnd,false);
 			for(var i=0;i<aS.length;i++){
 				aS[i].style.WebkitTransition = 'none';
-				aS[i].style.backgroundImage = 'url(img/'+(iNow%3+1)+'.jpg)';
+				aS[i].style.backgroundImage = 'url(img/'+(iNow%3+1)+'.png)';
 				aS[i].style.WebkitTransform = 'perspective(800px) translate(0,0) rotateY(0deg) rotateX(0deg) scale(1,1)';
 				aS[i].style.opacity = 1;
 			}
-			oBox.style.backgroundImage = 'url(img/'+((iNow+1)%3+1)+'.jpg)';
+			oBox.style.backgroundImage = 'url(img/'+((iNow+1)%3+1)+'.png)';
 			bOk = false;
 		}
 		aS[aS.length-1].addEventListener('transitionend',tranEnd,false);

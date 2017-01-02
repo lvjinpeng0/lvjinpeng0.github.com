@@ -2,120 +2,271 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Reverse-World</title>
-<style>
-body{ background:linear-gradient(#999,#fff); overflow-y:hidden;}
-.turn{ width:280px; height:70px; background:linear-gradient(red,#ff004f); position:absolute; top:50%; left:50%; margin-left:-140px; margin-top:-50px; border-radius:10px; text-align:center;  font:bold 20px '微软雅黑'; line-height:70px; text-decoration:none; color:#fff; box-shadow:0 10px 5px #333; text-shadow:2px 2px 2px #000; transition:0.3s all ease;}
-.turn0{margin-top:40px;margin-left:-195px;width:90px; height:40px; font:bold 16px '微软雅黑'; line-height:40px;border-radius:7px; background:linear-gradient(#37ae92,#37ae92);  box-shadow:0 5px 3px #333; position:absolute; top:50%; left:50%;  color:#fff; text-align:center; text-decoration:none; text-shadow:1px 1px 1px #000; }
-.turn2{margin-left:-95px;}
-.turn3{margin-left:5px;}
-.turn4{margin-left:105px;}
-.turn:hover{ box-shadow:0px 10px 5px #333,inset 0 0 10px #fff; font-size:30px;}
-.turn:active{ margin-top:-40px; box-shadow:0px 2px 5px #000;}
-@keyframes test{
-	from:{left:-113px;}
-	to{left:-226px;}	
-}
-@keyframes test2{
-	from:{left:113px;}
-	to{left:0;}	
-}
-.l_box{position:relative; height:677px; }
-.b_box{ position:absolute; left:50%; top:50%; margin-left:-195px; margin-top:-50px;}
-.box{ position:absolute; left:0; top:0; width:40px; height:70px; border:5px solid #bbb; overflow:hidden; border-radius:10px;}
-.box2{left:340px; }
-.box div{ position:absolute; left:-113px; top:0; width:400px; height:400px; background:-webkit-repeating-linear-gradient(-45deg,red 0px,red 10px,#fff 10px,#fff 20px,blue 20px,blue 30px,#fff 30px,#fff 40px);
-	-webkit-animation-name:test;
-	-webkit-animation-duration:1s;
-	-webkit-animation-timing-function:linear;
-	-webkit-animation-iteration-count:infinite;
-}
-.box1 div{
-	-webkit-animation-name:test2;
-}
-.btn_txt{ font:bold 16px '微软雅黑'; margin-left:10px; margin-right:100px; color:#FFFFFF; text-shadow:1px 1px 0px #333;}
-.btn_txt2{ color:#000000;}
-.a_box{position:absolute; left:50%; top:50%; margin-left:-195px; margin-top:-120px;}
-.long_box{position:absolute; left:0; top:30px; width:385px; height:30px; border:2px solid #ccc; overflow:hidden; border-radius:20px;}
-.long_box div{ position:absolute; left:-113px; top:0; width:800px; height:400px; background:-webkit-repeating-linear-gradient(-45deg,#FFFFFF 0px,#FFFFFF 10px,#000000 10px,#000000 20px,#FFFFFF 20px,#FFFFFF 30px,#000000 30px,#000000 40px);
-	-webkit-animation-name:test;
-	-webkit-animation-duration:1s;
-	-webkit-animation-timing-function:linear;
-	-webkit-animation-iteration-count:infinite;
-}
-.long_box1 div{
-	-webkit-animation-name:test2;
-}
-</style>
-<script>
-window.onload=function(){
-	
-	//背景转动
-	document.body.style.height = document.documentElement.clientHeight + 'px';
-	var d = 0;
-	var bOk = true;
-	setInterval(function(){
-		if(bOk){
-			d++;
-		}else{
-			d--;
-		}
-		document.body.style.background = 'linear-gradient('+d+'deg,#999,#fff)';	
-	},30);	
-	
-	//切换class反转
-	var oTurn = document.getElementsByClassName('turn')[0];
-	var aDiv = document.querySelectorAll('.box');
-	var oDiv = document.querySelector('.long_box');
-	oTurn.onmouseup=function(){
-		bOk = !bOk;	
-		for(var i = 0;i<aDiv.length;i++){
-			aDiv[i].classList.toggle('box1');
-		}
-		oDiv.classList.toggle('long_box1');
-	};
-	
-	//切换颜色的滚筒
-	var aColBtn = document.querySelectorAll('.a_box input');
-	var aSpan = document.querySelectorAll('.a_box span');
-	var lDiv = document.querySelector('.long_box div');
-	var arr = ['#FFFFFF','#000000'];
-	for(var i = 0;i<aColBtn.length;i++){
-		(function(index){
-			aColBtn[i].onchange = function(){
-				arr[index] = aSpan[index].innerHTML = aSpan[index].style.color = aColBtn[index].value.toUpperCase();	
-				lDiv.style.background = '-webkit-repeating-linear-gradient(-45deg,'+arr[0]+' 0px,'+arr[0]+' 10px,'+arr[1]+' 10px,'+arr[1]+' 20px,'+arr[0]+' 20px,'+arr[0]+' 30px,'+arr[1]+' 30px,'+arr[1]+' 40px)'; 
-			};	
-		})(i);
-	}
-};	
-</script>
+<title>Jerome Lv - front end engineer</title>
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<link rel="icon" sizes="any" mask href="img/lv.svg" />
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-<div class="l_box">
-	<div class="a_box">
-    	<input type="color" value="#FFFFFF">
-        <span class="btn_txt">#FFFFFF</span>
-    	<input type="color" value="#000000" >
-        <span class="btn_txt btn_txt2">#000000</span>
-        <div class="long_box">
-        	<div></div>
+    <div class="loading" id="loader">
+    	<img src="img/loader.gif" alt="loading..." />	
+    </div>
+    <div class="content">
+    	<!--全部内容-->
+        <div class="navBox">
+        	<ul class="nav">
+            	<li><a href="javascript:;">首页</a></li>
+            	<li><a href="javascript:;">职业</a></li>
+            	<li><a href="javascript:;">生活</a></li>
+            	<li><a href="javascript:;">技能</a></li>
+            	<li><a href="javascript:;">联系</a></li>
+            </ul>
+            <div class="top">
+            	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+					<g id="Imagenes">
+					</g>
+					<g id="Layer_2">
+						<path d="M13.81,40.74C15.798,38.154,18.285,35,23,35c2.497,0,4.557,0.553,6.217,1.322C30.017,35.284,31,34,31,34
+							c1.146-1.5,2.021-1.375,3,0l2.118,2.668C37.884,35.728,40.15,35,43,35c4.318,0,6.766,2.645,8.675,5.077
+							C54.395,36.242,56,31.56,56,26.5C56,13.521,45.479,3,32.5,3S9,13.521,9,26.5C9,31.855,10.794,36.788,13.81,40.74z M43,22
+							c2.209,0,4,1.791,4,4c0,2.209-1.791,4-4,4s-4-1.791-4-4C39,23.791,40.791,22,43,22z M22,22c2.209,0,4,1.791,4,4
+							c0,2.209-1.791,4-4,4s-4-1.791-4-4C18,23.791,19.791,22,22,22z"/>
+						<path d="M28,52.651c-0.975,0.524-1.984,0.947-3,1.292V60h3V52.651z"/>
+						<path d="M34,49.947v-0.264c-0.342-0.341-0.689-0.675-1-1.051c-0.399,0.482-0.834,0.923-1.283,1.348
+							c-0.231,0.219-0.475,0.417-0.717,0.62V60h3V49.947z"/>
+						<path d="M40,53.578c-1.031-0.412-2.034-0.928-3-1.529V60h3V53.578z"/>
+						<path d="M22,54.711C20.967,54.891,19.952,55,19,55v5h3V54.711z"/>
+						<path d="M46,60v-5.054c-0.969-0.059-1.973-0.198-3-0.432V60H46z"/>
+						<path d="M47,53c13,0,15-9,15-9c-1,1-3,2-6,2c-2.423,0-3.908-2.114-5.59-4.293C48.62,39.39,46.608,37,43,37
+							c-2.516,0-4.507,0.649-6.036,1.477c-0.301,0.163-0.587,0.33-0.852,0.504C33.979,40.377,33,42,33,42s-0.968-1.608-3.08-3
+							c-0.54-0.356-1.161-0.692-1.854-0.989C26.69,37.421,25.016,37,23,37c-3.926,0-5.964,2.831-7.88,5.317C13.62,44.264,12.196,46,10,46
+							c-3,0-5-1-6-2c0,0,2,9,15,9c2.42,0,5.934-0.74,9-2.647c0.314-0.195,0.622-0.403,0.925-0.624c0.315-0.229,0.622-0.472,0.922-0.73
+							c1.248-1.073,2.347-2.388,3.153-4c0.806,1.612,1.906,2.927,3.153,4c0.236,0.203,0.474,0.402,0.721,0.587
+							c0.041,0.031,0.084,0.059,0.126,0.089c2.891,2.131,6.372,3.087,9,3.281C46.348,52.983,46.686,53,47,53z"/>
+					</g>
+                </svg>
+            </div>
+        </div>
+    	<div id="fullPage">
+        	<!--我-->
+        	<div class="whoIamBox section">
+            	<div class="contentWhoIam"></div>
+            	<div class="whoIam coverImage">
+                	<div class="whoIamGradient"></div>
+                    <ul>
+                        <li><h1>Jerome Lu</h1></li>
+                        <li><h2>Front End Developer | Web Designer</h2></li>
+                        <li><hr class="vertical"/></li>
+                        <li><h3>Currently Live in Peking</h3></li>
+                    </ul>
+                    <div class="contIconMoves">
+                        <div class="mouse-icon hidden-sm hidden-xs">
+                            <a class="line" href="javascript:;">
+                                <div class="scroll">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioBox section">
+            	<div class="contentPortfolio"></div>
+            	<div class="portfolio">
+                	<h2>Lovely Projects</h2>
+                    <div class="clearfix por_proUlist">
+                    	<a href="rotate.html" target="_blank" class="fl por_proBox">
+                            <div class="por_prolist" style="background-image:url(img/works/them.jpg);">
+                                <div class="shadow"></div>
+                                <div class="por_projects">
+                                    <h5 class="tit">Them</h5>
+                                    <p class="view">VIEW PROJECT</p>
+                                </div>
+                            </div>
+                        </a>
+                    	<a href="rotate.html" target="_blank" class="fl por_proBox">
+                            <div class="por_prolist" style="background-image:url(img/works/samen.jpg);">
+                                <div class="shadow"></div>
+                                <div class="por_projects">
+                                    <h5 class="tit">Them</h5>
+                                    <p class="view">VIEW PROJECT</p>
+                                </div>
+                            </div>
+                        </a>
+                    	<a href="rotate.html" target="_blank" class="fl por_proBox">
+                            <div class="por_prolist" style="background-image:url(img/works/mercurio.jpg);">
+                                <div class="shadow"></div>
+                                <div class="por_projects">
+                                    <h5 class="tit">Them</h5>
+                                    <p class="view">VIEW PROJECT</p>
+                                </div>
+                            </div>
+                        </a>
+                    	<a href="rotate.html" target="_blank" class="fl por_proBox">
+                            <div class="por_prolist" style="background-image:url(img/works/branding.jpg);">
+                                <div class="shadow"></div>
+                                <div class="por_projects">
+                                    <h5 class="tit">Them</h5>
+                                    <p class="view">VIEW PROJECT</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        	<!--职业-->
+            <div class="careerBox section">
+            	<div class="contentCareer"></div>
+            	<div class="career coverImage">
+                	<div class="careerGradient"></div>
+                    <ul>
+                        <li><h2>Career</h2></li>
+                        <li><hr class="vertical"/></li>
+                        <li><h3>Since 2014</h3></li>
+                    </ul>
+                    <div class="contIconMoves">
+                        <div class="mouse-icon hidden-sm hidden-xs">
+                            <a class="line" href="javascript:;">
+                                <div class="scroll">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="careerInBox section">
+            	<div class="contentCareerIn"></div>
+            	<div class="careerIn">
+                	<h2>About Me</h2>
+                    <p>My name is Jerome Lu, I have been working for a IT company since 2014.</p>
+                </div>
+            </div>
+        	<!--生活方式-->
+            <div class="lifeStyleBox section">
+            	<div class="contentLifestyle"></div>
+            	<div class="lifeStyle coverImage">
+                	<div class="lifeStyleGradient"></div>
+                    <ul>
+                        <li><h2>Lifestyle</h2></li>
+                        <li><hr class="vertical"/></li>
+                        <li><h3>"Never Young Again"</h3></li>
+                    </ul>
+                    <div class="contIconMoves">
+                        <div class="mouse-icon hidden-sm hidden-xs">
+                            <a class="line" href="javascript:;">
+                                <div class="scroll">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioBox section">
+            	<div class="contentPortfolio"></div>
+            	<div class="portfolio">
+                	<h2>Lovely Projects</h2>
+                    <div class="clearfix por_proUlist">
+                    	<a href="rotate.html" target="_blank" class="fl por_proBox">
+                            <div class="por_prolist" style="background-image:url(img/works/them.jpg);">
+                                <div class="shadow"></div>
+                                <div class="por_projects">
+                                    <h5 class="tit">Them</h5>
+                                    <p class="view">VIEW PROJECT</p>
+                                </div>
+                            </div>
+                        </a>
+                    	<a href="rotate.html" target="_blank" class="fl por_proBox">
+                            <div class="por_prolist" style="background-image:url(img/works/samen.jpg);">
+                                <div class="shadow"></div>
+                                <div class="por_projects">
+                                    <h5 class="tit">Them</h5>
+                                    <p class="view">VIEW PROJECT</p>
+                                </div>
+                            </div>
+                        </a>
+                    	<a href="rotate.html" target="_blank" class="fl por_proBox">
+                            <div class="por_prolist" style="background-image:url(img/works/mercurio.jpg);">
+                                <div class="shadow"></div>
+                                <div class="por_projects">
+                                    <h5 class="tit">Them</h5>
+                                    <p class="view">VIEW PROJECT</p>
+                                </div>
+                            </div>
+                        </a>
+                    	<a href="rotate.html" target="_blank" class="fl por_proBox">
+                            <div class="por_prolist" style="background-image:url(img/works/branding.jpg);">
+                                <div class="shadow"></div>
+                                <div class="por_projects">
+                                    <h5 class="tit">Them</h5>
+                                    <p class="view">VIEW PROJECT</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        	<!--技能-->
+            <div class="skillsBox section">
+            	<div class="contentSkills"></div>
+            	<div class="skills coverImage">
+                	<div class="skillsGradient"></div>
+                    <ul>
+                        <li><h2>Skills</h2></li>
+                        <li><hr class="vertical"/></li>
+                        <li><h3>I love code & creative communications</h3></li>
+                    </ul>
+                    <div class="contIconMoves">
+                        <div class="mouse-icon hidden-sm hidden-xs">
+                            <a class="line" href="javascript:;">
+                                <div class="scroll">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skillsInBox section">
+            	<div class="contentSkillsIn"></div>
+            	<div class="skillsIn">
+                	<h2>So Happy!~</h2>
+                </div>
+            </div>
+        	<!--联系我-->
+            <div class="contactsBox section">
+            	<div class="contentContacts"></div>
+            	<div class="contacts coverImage">
+                	<div class="contactsGradient"></div>
+                    <ul>
+                        <li><h2>Contacts</h2></li>
+                        <li><hr class="vertical"/></li>
+                        <li><h3>For any request or just to say, Hola!</h3></li>
+                    </ul>
+                    <div class="contIconMoves">
+                        <div class="mouse-icon hidden-sm hidden-xs">
+                            <a class="line" href="javascript:;">
+                                <div class="scroll">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contactsInBox section">
+            	<div class="contentContactsIn"></div>
+            	<div class="contactsIn">
+                	<h2>Contact Me!~</h2>
+                </div>
+            </div>
         </div>
     </div>
-    <a href="javascript:;" class="turn">反转</a>
-    <a href="boom.html" target="_blank" class="turn0 turn1">爆炸</a>
-    <a href="turnover.html" target="_blank" class="turn0 turn2">百叶窗</a>
-    <a href="Screensaver.html" target="_blank" class="turn0 turn3">canvas屏保</a>
-    <a href="3D.html" target="_blank" class="turn0 turn4">3d-box</a>
-    <div class="b_box">
-        <div class="box">
-            <div></div>
-        </div>
-        <div class="box box2">
-            <div></div>
-        </div>
-    </div>
-</div>
+<script src="js/main.js"></script>
 </body>
 </html>

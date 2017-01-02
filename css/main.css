@@ -1,0 +1,463 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+html{min-height:100%;height:100%;}
+body{min-height:100%;height:100%; overflow:hidden;}
+h1, h2, h3, h4, h5, h6{
+    font-family: "Helvetica Neue LT Com 75 Bold V1", "Helvetica" ; 
+}
+.loading{width:100%; height:100%; background:#fefefe; display:none;}
+.loading img{position:absolute; left:50%; top:30%; margin-left:-100px; width:200px;}
+
+#fullPage{ transition:0.7s all ease; -webkit-transition:0.7s all ease; -moz-transition:0.7s all ease; -ms-transition:0.7s all ease; -o-transition:0.7s all ease; position:relative;}
+
+.navBox{ position:absolute; z-index:10; top:0; left:0; width:100%;}
+.nav{position:absolute; top:0; left:0;}
+.nav li{margin:30px;}
+.nav li a{ font-size:20px; color:#fff; margin:5px; transition:0.4s all ease; display:block;}
+.nav li a:hover{transform:scale(1.1,1.1); color:#ecab20;}
+.top{position:absolute; top:10px; right:10px;}
+.top svg{width:100px; height:auto; cursor:pointer;}
+.top svg:hover g *{fill:#ecab20;}
+.top svg g *{fill:#afafaf; transition:0.5s all ease;}
+
+/*我*/
+.section{ position:relative; overflow:hidden;}
+.whoIamBox,.careerBox,.lifeStyleBox,.skillsBox,.skillsInBox,.contactsBox,.contactsInBox{ text-align:center;}
+.whoIam,.career,.lifeStyle,.skills,.contacts{ background:url(../img/whoIam.jpg) no-repeat; background-size:cover; width:100%; height:100%; position:relative;}
+.whoIam h1{ color: #fff; font-size: 140px; font-weight: 700; line-height: 1; margin: 0;}    
+.career h2,.lifeStyle h2,.skills h2,.contacts h2{ color: #fff; font-size: 130px; font-weight: 700; line-height: 1; margin: 0;}    
+.whoIam h2,.portfolio h2,.careerIn h2,.skillsInBox h2,.contactsInBox h2{ color: #ecab20; font-size: 32px; font-weight: 500;}
+.whoIam h4, h3,
+.career h4,
+.lifeStyle h4,
+.skills h4,
+.contacts h4{
+    color: #fff;
+    line-height: 1.2;
+    margin: 45px 0 0;
+    font-weight: 500;
+    font-size:32px;
+}
+hr.vertical{ height:180px; width:0; margin-top:20px;}
+    
+.coverImage ul li{
+    position: relative;
+    transform: translateY(30%);
+    opacity: 0;
+    transition: all 0.4s ease-out;
+}
+.coverImage ul li:nth-child(1) {
+    transition-delay: 0.2s;
+    transition-duration: 0.5s;
+}
+.coverImage ul li:nth-child(2) {
+    transform: translateY(0%);
+    transition-delay: 0s;
+}
+.coverImage ul li:nth-child(3) {
+    transition-delay: 1.5s;
+}
+
+.coverImage hr{
+    height: 0;
+    transition: all 0.45s ease-out 1s;
+}
+
+
+.whoIam.coverImage ul li:nth-child(1) {
+    transition-delay: 0.2s;
+    transition-duration: 0.8s;
+}
+.whoIam.coverImage hr{
+    transition-delay: 1.5s;
+}
+.whoIam.coverImage ul li:nth-child(2) {
+    transition-delay: 1s;
+    transition-duration: 1s;
+}
+.whoIam.coverImage ul li:nth-child(3) {
+    transition-delay: 1.5s;
+}
+.whoIam.coverImage ul li:nth-child(4) {
+    transition-delay: 2s;
+}
+
+
+.state-in.coverImage ul li {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.state-in.coverImage hr{
+    height: 180px;
+}
+
+
+.contentWhoIam, .contentPortfolio, 
+.contentCareer, .contentCareerIn,
+.contentLifestyle,.contentSkillsIn,
+.contentSkills{
+    /*GRADIENT*/
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 4%, transparent 47%, #ef7b3c 106%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(186deg, transparent 4%, transparent 47%, #ef7b3c 106%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 4%, transparent 47%, #ef7b3c 106%) repeat scroll 0 0;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index:1;
+    transition: all 0.7s ease-out 0s;
+}
+
+.contentPortfolio{    
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 15%, #6c98bd 51%, #ffb6a5 120%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(186deg, transparent 15%, #6c98bd 51%, #ffb6a5 120%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 15%, #6c98bd 51%, #ffb6a5 120%) repeat scroll 0 0;
+    opacity: 0.5;}
+.whoIamGradient, .careerGradient, .lifeStyleGradient, .skillsGradient, .contactsGradient{
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    /*GRADIENT*/
+    background: -moz-linear-gradient(right top, #aef691, #91dff6); /* For Firefox 3.6 to 15 */
+    background: -webkit-linear-gradient(left top, #aef691 , #91dff6); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right top, #aef691, #91dff6); /* For Opera 11.1 to 12.0 */
+    background: -ms-linear-gradient(right top, #aef691 0%, #91dff6 50%);
+    background: linear-gradient(4deg, #aef691, #91dff6);/* Standard syntax */
+    background-size: 400% 400%;
+    -webkit-animation: sunshine 5s ease infinite 0.2s;
+    -moz-animation: sunshine 5s ease infinite 0.2s;
+    -o-animation: sunshine 5s ease infinite 0.2s;
+    animation: sunshine 5s ease infinite 0.2s;
+}
+@-webkit-keyframes sunshine {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+@-moz-keyframes sunshine {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+@-o-keyframes sunshine {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+@keyframes sunshine {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+.whoIam ul, .career ul, .lifeStyle ul, .skills ul, .contacts ul{
+    list-style: outside none none;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    width: 90%;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    /*animation:mymoveThree 1s ease-out forwards;
+    animation-iteration-count:1;
+
+    -webkit-animation:mymoveThree 1s;
+    -webkit-animation-iteration-count:1;*/
+}
+
+.contIconMoves {
+    bottom: 0;
+    display: block;
+    left: 50%;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    transform: translateY(-50%) translateX(-50%);
+    width: auto;
+    z-index: 99999;
+}
+.mouse-icon {
+    border: 2px solid #fff;
+    border-radius: 16px;
+    float: left;
+    height: 40px;
+    width: 24px;
+    box-sizing:border-box;
+}
+@-webkit-keyframes scrolling    {
+    0%   { top:5px;  opacity: 0;}
+    30%  { top:10px; opacity: 1;}
+    100% { top:25px; opacity: 0;}
+}
+
+@keyframes scrolling    {
+    0%   { top:5px;  opacity: 0;}
+    30%  { top:10px; opacity: 1;}
+    100% { top:25px; opacity: 0;}
+}
+
+.mouse-icon .scroll {
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: scrolling;
+    animation-play-state: running;
+    animation-timing-function: linear;
+}
+.mouse-icon .scroll {
+    background: #ed9a3f none repeat scroll 0 0;
+    border-radius: 10px;
+    height: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 4px;
+    width: 4px;
+}
+.mouse-icon .scroll i{
+  display: none;
+}
+.mouse-icon .scroll {
+    -webkit-animation-name: scrolling;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+    animation-name: scrolling;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+.mouse-icon .scroll {
+    position: relative;
+    border-radius: 10px;
+    width: 4px;
+    height: 10px;
+    top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*portfolio*/
+.por_prolist{ background-size:cover; background-position:center center; background-repeat:no-repeat; width:540px; height:216px; position:relative;           -webkit-filter: blur(2px); filter: blur(2px); transition: all 0.7s ease-out 0s; overflow:hidden;}
+.por_proBox{overflow:hidden; margin:2px;}
+.portfolio,.careerIn{ margin:auto; width:1088px; padding-top:80px; position:relative; z-index:2;}
+.por_proUlist{ margin-top:16px;}
+.por_projects{ text-align:center; padding-top:70px; position:relative;}
+.por_projects .tit{ color:#fff; font-weight:700px; text-shadow:0 0 22px rgba(0,0,0,0.3); font-size:31px;}
+.por_projects .view{ color:#fff; text-shadow:0 0 22px rgba(0,0,0,0.3); font-weight:600; font-size:12px; line-height:32px; opacity:0; transform:translate(0,-10px); transition: .5s transform cubic-bezier(.165,.84,.44,1),.5s opacity cubic-bezier(.165,.84,.44,1); transition-delay: 0.4s;}
+.por_prolist .shadow{ position:absolute; width:100%; height:100%; transition: all 0.5s ease-out 0s; opacity:0.3;
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(250deg, #f7b264 0%, #48c5e9 51%, #489fe9 105%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(200deg, #f7b264 0%, #48c5e9 51%, #489fe9 105%) repeat scroll 0 0;
+}
+.por_prolist:hover .shadow{opacity:0;}
+.por_prolist:hover .view{opacity:1; transform:translate(0,0);}
+.por_prolist:hover{
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    transform: scale(1.1, 1.1);
+}
+
+/*career*/
+.career{ background-image:url(../img/proExperience.jpg);}
+.careerGradient{
+    /*GRADIENT*/
+    background: -moz-linear-gradient(right top, #53fff9, #176ccb); /* For Firefox 3.6 to 15 */
+    background: -webkit-gradient(linear, 0% 0%,0% 100%, from(#53fff9), to(#176ccb));
+    background: -webkit-linear-gradient(left top, #53fff9 , #176ccb); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right top, #53fff9, #176ccb); /* For Opera 11.1 to 12.0 */
+    background: -ms-linear-gradient(right top, #53fff9 0%, #176ccb 50%);
+    background: linear-gradient(4deg, #53fff9, #176ccb); /* Standard syntax */    
+    background-size: 400% 400%;
+    -webkit-animation: morning 10s ease infinite;
+    -moz-animation: morning 10s ease infinite;
+    -o-animation: morning 10s ease infinite;
+    animation: morning 10s ease infinite;
+}
+@-webkit-keyframes morning {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+@-moz-keyframes morning {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+@-o-keyframes morning {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+@keyframes morning {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+.contentCareer{
+    /*GRADIENT*/
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 15%, transparent, #176ccb 106%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(186deg, transparent 15%, transparent, #176ccb 106%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 15%, transparent, #176ccb 106%) repeat scroll 0 0;
+}
+.contentCareerIn{
+    /*GRADIENT*/
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 15%, transparent, #176ccb 80%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(186deg, transparent 15%, transparent, #176ccb 80%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 15%, transparent, #176ccb 80%) repeat scroll 0 0;
+    opacity:0.5;
+}
+
+/*lifeStyle*/
+.lifeStyle{ background-image:url(../img/lifeStyle.jpg);}
+.contentLifestyle{
+    /*GRADIENT*/
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 15%, transparent, #ff9578 106%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(186deg, transparent 15%, transparent, #ff9578 106%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient (264deg, transparent 15%, transparent, #ff9578106%) repeat scroll 0 0;
+}
+.lifeStyleGradient{
+    /*GRADIENT*/
+    background: -moz-linear-gradient(right top, #c8b1fc, #ff9a68); /* For Firefox 3.6 to 15 */
+    background: -webkit-gradient(linear, 0% 0%,0% 100%, from(#53fff9), to(#ff9a68));
+    background: -webkit-linear-gradient(left top, #c8b1fc , #ff9a68); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right top, #c8b1fc, #ff9a68); /* For Opera 11.1 to 12.0 */
+    background: -ms-linear-gradient(right top, #c8b1fc 0%, #ff9a68 50%);
+    background: linear-gradient(4deg, #c8b1fc, #ff9a68); /* Standard syntax */
+    background-size: 400% 400%;
+   -webkit-animation: Sunset 11s ease infinite;
+   -moz-animation: Sunset 11s ease infinite;
+    animation: Sunset 11s ease infinite;
+}
+@-webkit-keyframes Sunset {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+@-moz-keyframes Sunset {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+@-o-keyframes Sunset {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+@keyframes Sunset {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+/*lifeStyleIn*/
+.contentLifestyleIn{
+    /*GRADIENT*/
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 15%, transparent, #ff9578 80%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(186deg, transparent 15%, transparent, #ff9578 80%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 15%, transparent, #ff9578 80%) repeat scroll 0 0;
+}
+
+/*skills*/
+.skills{ background-image:url(../img/skillsThree.jpg);}
+.skillsGradient{
+    /*GRADIENT*/
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(200deg, #00072a 0%, #ffd6a9 51%, #00072a 105%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(250deg, #f7b264 0%, #48c5e9 51%, #00072a 105%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(200deg, #f7b264 0%, #48c5e9 51%, #00072a 105%) repeat scroll 0 0;
+    background: linear-gradient(4deg, #f7b264, #48c5e9, #00072a);
+    background-size: 600% 600%;
+    -webkit-animation: evening 15s ease infinite;
+    -moz-animation: evening 15s ease infinite;
+    animation: evening 15s ease infinite;
+}
+.contentSkills{
+    /*GRADIENT*/
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 15%, transparent, #00072a 106%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(186deg, transparent 15%, transparent, #00072a 106%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 15%, transparent, #00072a 106%) repeat scroll 0 0;
+}
+@-webkit-keyframes evening {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+@-moz-keyframes evening {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+@-o-keyframes evening {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+@keyframes evening {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+
+
+/*skillsIn*/
+.contentSkillsIn{
+    /*GRADIENT*/
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 15%, transparent, #190840 95%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(186deg, transparent 15%, transparent, #190840 95%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 15%, transparent, #190840 95%) repeat scroll 0 0;
+    opacity:0.5;
+}
+/*contacts*/
+.contacts{ background-image:url(../img/contacts.jpg);}
+.contentContacts, .contentContactsIn{
+    background: url("../img/stars.png") no-repeat scroll 50% 1em, rgba(0, 0, 0, 0) -webkit-linear-gradient(187deg, transparent 0%, #190840 0%, #000 53%) repeat scroll 0 0;
+    background: url("../img/stars.png") no-repeat scroll 50% 1em, rgba(0, 0, 0, 0) -webkit-linear-gradient(263deg, transparent 0%, #190840 0%, #000 53%) repeat scroll 0 0;
+    background: url("../img/stars.png") no-repeat scroll 50% 1em, rgba(0, 0, 0, 0) linear-gradient(187deg, transparent 0%, #190840 0%, #000 53%) repeat scroll 0 0;
+    height: 100%;
+    opacity: 0.3;
+    position: absolute;
+    transition: all 0.7s ease-out 0s;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.contactsGradient{
+    /*GRADIENT*/
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(200deg, #0b3e8b 0%, #000000 105%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(250deg, #0b3e8b 0%, #000000 105%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(200deg, #0b3e8b 0%, #000000 105%) repeat scroll 0 0;
+    background: linear-gradient(4deg, #0b3e8b, #000000);
+    background-size: 400% 400%;
+    -webkit-animation: night 7s ease infinite;
+    -moz-animation: night 7s ease infinite;
+    animation: night 7s ease infinite;    
+}
+
+@-webkit-keyframes night {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+@-moz-keyframes night {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+@keyframes night {
+    0%{background-position:59% 0%}
+    50%{background-position:42% 100%}
+    100%{background-position:59% 0%}
+}
+
+
+.contactsInBox{ background-color:#0b0b0b;}
+.contactsIn{ position:relative; z-index:2;}
