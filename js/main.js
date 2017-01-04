@@ -79,8 +79,12 @@ var aCoverImg = document.querySelectorAll('.section .coverImage');
 var iNow = 0;
 var bOk = false;
 var oFullPage = document.getElementById('fullPage');
+var oLoader = document.getElementById('loader');
 var aNavList = document.querySelectorAll('.nav li');
 var oTop = document.querySelector('.top');
+
+//loader
+oLoader.style.display = 'none';
 
 //左上角导航菜单
 var aNavListLen = aNavList.length;

@@ -7,7 +7,7 @@ body{min-height:100%;height:100%; overflow:hidden;}
 h1, h2, h3, h4, h5, h6{
     font-family: "Helvetica Neue LT Com 75 Bold V1", "Helvetica" ; 
 }
-.loading{width:100%; height:100%; background:#fefefe; display:none;}
+.loading{width:100%; height:100%; background:#fefefe;}
 .loading img{position:absolute; left:50%; top:30%; margin-left:-100px; width:200px;}
 
 #fullPage{ transition:0.7s all ease; -webkit-transition:0.7s all ease; -moz-transition:0.7s all ease; -ms-transition:0.7s all ease; -o-transition:0.7s all ease; position:relative;}
@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6{
 /*我*/
 .section{ position:relative; overflow:hidden;}
 .whoIamBox,.careerBox,.lifeStyleBox,.skillsBox,.skillsInBox,.contactsBox,.contactsInBox{ text-align:center;}
-.whoIam,.career,.lifeStyle,.skills,.contacts{ background:url(../img/whoIam.jpg) no-repeat; background-size:cover; width:100%; height:100%; position:relative;}
+.whoIam,.career,.lifeStyle,.skills,.contacts{ background:url("http://oj9cm5iz5.bkt.clouddn.com/whoIam.jpg") no-repeat; background-size:cover; width:100%; height:100%; position:relative;}
 .whoIam h1{ color: #fff; font-size: 140px; font-weight: 700; line-height: 1; margin: 0;}    
 .career h2,.lifeStyle h2,.skills h2,.contacts h2{ color: #fff; font-size: 130px; font-weight: 700; line-height: 1; margin: 0;}    
 .whoIam h2,.portfolio h2,.careerIn h2,.skillsInBox h2,.contactsInBox h2{ color: #ecab20; font-size: 32px; font-weight: 500;}
@@ -269,7 +269,7 @@ hr.vertical{ height:180px; width:0; margin-top:20px;}
 }
 
 /*career*/
-.career{ background-image:url(../img/proExperience.jpg);}
+.career{ background-image:url("http://oj9cm5iz5.bkt.clouddn.com/proExperience.jpg");}
 .careerGradient{
     /*GRADIENT*/
     background: -moz-linear-gradient(right top, #53fff9, #176ccb); /* For Firefox 3.6 to 15 */
@@ -319,7 +319,7 @@ hr.vertical{ height:180px; width:0; margin-top:20px;}
 }
 
 /*lifeStyle*/
-.lifeStyle{ background-image:url(../img/lifeStyle.jpg);}
+.lifeStyle{ background-image:url("http://oj9cm5iz5.bkt.clouddn.com/lifeStyle.jpg");}
 .contentLifestyle{
     /*GRADIENT*/
     background: rgba(0, 0, 0, 0) -webkit-linear-gradient(264deg, transparent 15%, transparent, #ff9578 106%) repeat scroll 0 0;
@@ -368,7 +368,7 @@ hr.vertical{ height:180px; width:0; margin-top:20px;}
 }
 
 /*skills*/
-.skills{ background-image:url(../img/skillsThree.jpg);}
+.skills{ background-image:url("http://oj9cm5iz5.bkt.clouddn.com/skillsThree.jpg");}
 .skillsGradient{
     /*GRADIENT*/
     background: rgba(0, 0, 0, 0) -webkit-linear-gradient(200deg, #00072a 0%, #ffd6a9 51%, #00072a 105%) repeat scroll 0 0;
@@ -417,11 +417,11 @@ hr.vertical{ height:180px; width:0; margin-top:20px;}
     opacity:0.5;
 }
 /*contacts*/
-.contacts{ background-image:url(../img/contacts.jpg);}
+.contacts{ background-image:url("http://oj9cm5iz5.bkt.clouddn.com/contacts.jpg");}
 .contentContacts, .contentContactsIn{
-    background: url("../img/stars.png") no-repeat scroll 50% 1em, rgba(0, 0, 0, 0) -webkit-linear-gradient(187deg, transparent 0%, #190840 0%, #000 53%) repeat scroll 0 0;
-    background: url("../img/stars.png") no-repeat scroll 50% 1em, rgba(0, 0, 0, 0) -webkit-linear-gradient(263deg, transparent 0%, #190840 0%, #000 53%) repeat scroll 0 0;
-    background: url("../img/stars.png") no-repeat scroll 50% 1em, rgba(0, 0, 0, 0) linear-gradient(187deg, transparent 0%, #190840 0%, #000 53%) repeat scroll 0 0;
+    background: url("http://oj9cm5iz5.bkt.clouddn.com/stars.png") no-repeat scroll 50% 1em, rgba(0, 0, 0, 0) -webkit-linear-gradient(187deg, transparent 0%, #190840 0%, #000 53%) repeat scroll 0 0;
+    background: url("http://oj9cm5iz5.bkt.clouddn.com/stars.png") no-repeat scroll 50% 1em, rgba(0, 0, 0, 0) -webkit-linear-gradient(263deg, transparent 0%, #190840 0%, #000 53%) repeat scroll 0 0;
+    background: url("http://oj9cm5iz5.bkt.clouddn.com/stars.png") no-repeat scroll 50% 1em, rgba(0, 0, 0, 0) linear-gradient(187deg, transparent 0%, #190840 0%, #000 53%) repeat scroll 0 0;
     height: 100%;
     opacity: 0.3;
     position: absolute;
